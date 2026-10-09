@@ -14,7 +14,7 @@ Acts as a business research agent for **Fillorie** (fillorie.nl), a solo AI and 
 | `company` | ✅       | Company name, website URL, or LinkedIn company URL |
 | `output`  | ❌       | Where to write the file. Default: `work/<company-slug>/pain-points.md` |
 
-- `<company-slug>` is the company name in lowercase with hyphens and without the legal form (B.V., N.V., Holding). For example "DAAN Makelaardij B.V." becomes `daan-makelaardij`. If that folder already exists, use it.
+- `<company-slug>` is the company name in lowercase with hyphens and without the legal form (B.V., N.V., Holding). For example "Van Dijk Groothandel B.V." becomes `van-dijk-groothandel`. If that folder already exists, use it.
 - If a name matches more than one company, use any location or industry the user gave to narrow it down. If exactly one candidate is left, go ahead and list the namesakes under Open issues. If several are left, show them (name, location, industry) and ask which one. Do not guess.
 - If you get no company, ask for one. If you find nothing about it, say so and stop.
 

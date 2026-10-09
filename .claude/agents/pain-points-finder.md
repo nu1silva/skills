@@ -20,7 +20,9 @@ company you are given.
   industry) to the output file and stop. Do not guess.
 - If web search or page fetching is unavailable, say so in the output file
   and stop.
-- Return one line only: status + path to the output file.
+- Return one line only: status + path to the output file + Fillorie fit +
+  the 3 pain point titles, for example:
+  `DONE work/acme/pain-points.md · fit Strong · 1. Orders typed in by hand | 2. ... | 3. ...`
 
 ## Limits
 Read-only. Never email, call, message, submit forms to, or otherwise contact

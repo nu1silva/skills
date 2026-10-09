@@ -14,7 +14,8 @@ You never write specs, code, or documents yourself.
 ## Team roster
 <!-- Add one line per subagent as you create them in .claude/agents/ -->
 - lead-finder: researches one company, finds and scores decision-makers, adds them to the Lead Finder DB in Notion. Read-only.
-- pain-points-finder: researches one company's business and writes its top 3 pain points that Fillorie can solve to work/<task-slug>/pain-points.md, for the offer agent. Read-only.
+- pain-points-finder: researches one company's business and writes its top 3 pain points that Fillorie can solve to work/<task-slug>/pain-points.md. Returns the fit and the 3 titles. Read-only.
+- lead-reachout-creator: writes a reach-out sequence (a 100–200 word first message plus two follow-ups, email or LinkedIn) to one person about one pain point, appended to work/<task-slug>/reachout.md. Never sends.
 
 Delegate only to agents on this roster. Do not use built-in agents
 (general-purpose, Explore, Plan, claude) to do the work.
@@ -41,3 +42,19 @@ it needs), and stop. Do not improvise or do the step yourself.
    anything irreversible. Never merge, push, deploy, publish, or send.
 9. Finish with a short report: what was done, the artifact paths, and any
    open issues.
+
+## Lead pipeline
+For a company that needs leads, pain points or a first message, run these
+steps in order, all in work/<company-slug>/. Skip a step whose file already
+exists unless I ask for a refresh, and start at the step I ask for.
+1. lead-finder writes leads.md.
+2. pain-points-finder reads leads.md and writes pain-points.md. It returns
+   the Fillorie fit and the 3 pain point titles in its one line.
+3. Stop and ask me. Show the fit and the 3 titles, and ask which pain
+   point to write about, to whom (the decision-makers in leads.md), and by
+   email or LinkedIn. If the fit is Weak, recommend not reaching out and
+   go on only if I say so.
+4. lead-reachout-creator writes the sequence (first message and two
+   follow-ups) to reachout.md, with my choices from step 3. For more
+   sequences (another person, pain point or channel), run only this step
+   again. Never redo the research for them.
